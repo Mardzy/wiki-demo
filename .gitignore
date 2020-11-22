@@ -24,13 +24,13 @@
 
 # SERVER
 # dependencies
-/server/node_modules
-/server/build
-/server/.env
-/server/.env.local
-/server/.env.development.local
-/server/.env.test.local
-/server/.env.production.local
+/index/node_modules
+/index/build
+/index/.env
+/index/.env.local
+/index/.env.development.local
+/index/.env.test.local
+/index/.env.production.local
 
 # Logs
 logs

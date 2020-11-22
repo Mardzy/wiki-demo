@@ -1,6 +1,6 @@
 # React Apollo Graphql Boilerplate
 
-A Full-Stack React Apollo Graphql Boilerplate written in Typescript. A scalable development that focus on performance and best practices. Easily plugable client or server code to build on top.
+A Full-Stack React Apollo Graphql Boilerplate written in Typescript. A scalable development that focus on performance and best practices. Easily plugable client or index code to build on top.
 
 ![alt text](https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/06/building-graphql-react-app-typescript.png?w=1024&ssl=1)
 
@@ -8,7 +8,7 @@ A Full-Stack React Apollo Graphql Boilerplate written in Typescript. A scalable 
 
 ### Next Generation JavaScript with Typescript
 
-- Stop worrying about browser support and use features like template strings, object destructuring, arrow functions, JSX syntax, and more today! Include Typescript in both client and server for high performing and robust code!
+- Stop worrying about browser support and use features like template strings, object destructuring, arrow functions, JSX syntax, and more today! Include Typescript in both client and index for high performing and robust code!
 
 ### Next Generation CSS
 
@@ -71,7 +71,7 @@ $ npm install
 $ yarn
 ```
 
-- to run the project, server will run on `http://localhost:3000/`
+- to run the project, index will run on `http://localhost:3000/`
 
 ```
 $ npm run start
