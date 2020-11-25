@@ -1,6 +1,6 @@
 /*
  * VALIDATIONS
- * Object schema validation
+ * Object index validation
  * @see https://github.com/jquense/yup
  */
 

@@ -47,7 +47,6 @@
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint . --fix",
-      "jest --config='./jest.config.js' --bail --coverage",
       "git add"
     ],
     "*.{json}": [

@@ -25,7 +25,7 @@ Smart component that handle graphql api
       -> index.tsx
       -> gql.ts ( gql-tag )
       -> enums.ts ( typescript enums )
-      -> validations.ts ( validation schema using yup )
+      -> validations.ts ( validation index using yup )
       -> styled.tsx ( Styled Component )
       -> interfaces.ts
       -> /__tests__
