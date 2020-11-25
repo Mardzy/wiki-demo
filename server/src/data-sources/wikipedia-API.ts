@@ -10,7 +10,7 @@ export class WikipediaAPI extends  RESTDataSource {
    * Fetches json data for Wikipedia page from string input
    * @param {String} title
    */
-  async fetchItem (title: String) {
+  async fetchCategoriesAndSections (title: String) {
     const params = {
       action: "parse",
       format: "json",
@@ -25,4 +25,4 @@ export class WikipediaAPI extends  RESTDataSource {
   }
 }
 
-export const dataSources = () => ({ wikipediaAPI: new WikipediaAPI() });
+export const wikipediaAPI = new WikipediaAPI();
