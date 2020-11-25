@@ -1,4 +1,7 @@
-export const Section = `
+import { gql } from 'apollo-server';
+
+export const Section = gql`
+ type Section {
   toclevel: Int
   level: String
   line: String
@@ -7,4 +10,5 @@ export const Section = `
   fromtitle: String
   byteoffset: Int
   anchor: String
+ }
 `;

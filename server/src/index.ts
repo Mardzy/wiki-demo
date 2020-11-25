@@ -1,8 +1,9 @@
-import { ApolloServer} from 'apollo-server';
-import { index } from './schema';
-import { dataSources } from './data-sources/wikipedia-API';
+import { ApolloServer } from 'apollo-server';
+import { schema } from './schema';
 
-const server = new ApolloServer({ dataSources, schema: index });
+import { dataSources } from "./data-sources";
+
+const server = new ApolloServer({ dataSources, schema });
 
 server
   .listen()

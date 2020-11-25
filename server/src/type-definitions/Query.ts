@@ -1,5 +1,10 @@
-export const Query = `
+import { gql } from 'apollo-server';
+
+/**
+ * All queries to be added within this type
+ */
+export const Query = gql`
   type Query {
-    fetchItem(title: String): WikiResponse
+    fetchCategoriesAndSections(title: String): WikiResponse
   }
 `;

@@ -1,1 +1,5 @@
-export { wikipediaAPI } from './wikipedia-API';
+import WikipediaAPI from './wikipedia-API';
+
+export const dataSources = () =>
+  ({ wikipediaAPI: new WikipediaAPI() })
+

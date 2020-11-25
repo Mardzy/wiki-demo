@@ -1,6 +1,6 @@
 import { RequestOptions, RESTDataSource } from 'apollo-datasource-rest';
 
-export class WikipediaAPI extends  RESTDataSource {
+export default class WikipediaAPI extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = 'https://en.wikipedia.org/w/api.php';
@@ -24,5 +24,3 @@ export class WikipediaAPI extends  RESTDataSource {
     return parse;
   }
 }
-
-export const wikipediaAPI = new WikipediaAPI();

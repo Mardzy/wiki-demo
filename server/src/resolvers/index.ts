@@ -1,8 +1,10 @@
 import { IResolvers } from 'apollo-server';
-export { resolvers as wikiResponse } from './wiki-response';
+import { wikiResponse} from './wiki-response';
 
-export const resolvers: IResolvers = {
+const rootResolver: IResolvers = {
   Query: {
 
   }
 }
+
+export { rootResolver, wikiResponse }
