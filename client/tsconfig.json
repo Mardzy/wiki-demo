@@ -1,21 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "jsx": "react",
-    "types": ["jest", "node"],
-    "isolatedModules": true,
-    "baseUrl": "src"
+    "outDir": "./dist/",        // path to output directory
+    "sourceMap": true,          // allow sourcemap support
+    "strictNullChecks": true,   // enable strict null checks as a best practice
+    "module": "es6",            // specify module code generation
+    "jsx": "react",             // use typescript to transpile jsx to js
+    "target": "es5",            // specify ECMAScript target version
+    "allowJs": true             // allow a partial TypeScript and JavaScript codebase
   },
-  "include": ["src"]
+  "include": [
+    "./src/"
+  ]
 }
