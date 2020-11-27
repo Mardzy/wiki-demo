@@ -6,8 +6,8 @@
   "scripts": {
     "build": "npx webpack",
     "watch:server": "nodemon \"./build/bundle.js\" --watch \"./build\" ",
-    "dev": "yarn build && nodemon dist/index.js",
-    "start": "node build/index.ts"
+    "dev": "yarn build && yarn serve",
+    "serve": "nodemon ./dist/index.js"
   },
   "author": "Paul Mardling",
   "license": "ISC",
@@ -25,9 +25,11 @@
     "@typescript-eslint/parser": "^2.10.0",
     "apollo-datasource-rest": "^0.9.5",
     "apollo-server": "^2.19.0",
+    "eslint": "^7.14.0",
     "graphql-tag": "^2.11.0",
     "nodemon": "^2.0.6",
     "ntypescript": "^1.201706190042.1",
+    "prettier": "^2.2.0",
     "ts-loader": "^8.0.11",
     "ts-node": "^9.0.0",
     "tsc": "^1.20150623.0",
@@ -45,7 +47,6 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "prettier --write",
       "eslint . --fix",
       "git add"
     ],
