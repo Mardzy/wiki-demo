@@ -10,7 +10,7 @@ export default class WikipediaAPI extends RESTDataSource {
    * Fetches json data for Wikipedia page from string input
    * @param {String} title
    */
-  async fetchCategoriesAndSections (title: string) {
+  async fetchWikiData (title: string) {
     const params = {
       action: "parse",
       format: "json",

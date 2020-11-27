@@ -1,19 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo';
+import { render } from 'react-dom';
+import { ApolloProvider } from '@apollo/client';
 
+import { client } from './apollo';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const networkInterface = createNetworkInterface({
-  uri: "http://localhost:4000"
-})
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+render(
+  <ApolloProvider client={client}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 

@@ -5,6 +5,6 @@ import { gql } from 'apollo-server';
  */
 export const Query = gql`
   type Query {
-    fetchCategoriesAndSections(title: String): WikiResponse
+    fetchWikiData(title: String): WikiResponse
   }
 `;
