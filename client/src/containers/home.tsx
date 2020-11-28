@@ -32,7 +32,6 @@ const Home: React.FC = () => {
           <CategoryList categories={wikiData?.categories} />
         </>
       }
-
     </div>
   );
 }

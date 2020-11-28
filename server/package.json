@@ -5,8 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "npx webpack",
-    "watch:server": "nodemon \"./build/bundle.js\" --watch \"./build\" ",
-    "dev": "yarn build && yarn serve",
+    "start": "yarn build && yarn serve",
     "serve": "nodemon ./dist/index.js"
   },
   "author": "Paul Mardling",
