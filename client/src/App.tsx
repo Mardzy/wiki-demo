@@ -1,12 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 
-import { FetchWikiArticle } from './components';
-import './App.css';
+import { Home } from './containers';
 
-
-const App: React.SFC = () => {
+const App: React.FC = () => {
   return (
-    <FetchWikiArticle />
+    <Home />
   );
 };
 export default App;
