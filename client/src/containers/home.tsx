@@ -11,8 +11,14 @@ const Home: React.FC = () => {
   const [value, setValue] = useState("")
   const wikiData = useFetchWikiData(value);
 
+  let timeout: number | null = null;
+
   const handleChange = (value: string) => {
-    setValue(value)
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    timeout = window.setTimeout(() => setValue(value), 1500)
   }
 
   return (
