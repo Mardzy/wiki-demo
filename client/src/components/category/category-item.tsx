@@ -7,8 +7,9 @@ type CategoryProps = {
 }
 
 const CategoryItem: React.FC<CategoryProps> = ({ category }: CategoryProps) => {
-  console.log("category: ", category);
-  return <div>category</div>
+  return (
+    <div>{category.category}</div>
+  );
 };
 
 export default CategoryItem;

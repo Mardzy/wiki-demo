@@ -7,8 +7,12 @@ type SectionProps = {
 }
 
 const SectionItem: React.FC<SectionProps> = ({ section }: SectionProps) => {
-  console.log("section: ", section);
-  return <div>section</div>
+  // console.log("section: ", section);
+  return (
+    <div>
+      <div><span>{section.number}. </span>{section.anchor}</div>
+    </div>
+  );
 };
 
 export default SectionItem;

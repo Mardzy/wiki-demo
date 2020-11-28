@@ -5,7 +5,7 @@ import { Section } from '../../../../common/types/Section';
 import { SectionItem } from "./index";
 
 type SectionListProps = {
-  sections: Section[]
+  sections: Section[] | undefined
 }
 
 /**
@@ -17,7 +17,8 @@ const SectionList: React.FC<SectionListProps> = ({ sections }: SectionListProps)
 
   return (
     <div>
-      {sections.map(section =>
+      <h3>Table of Contents</h3>
+      {sections && sections.map(section =>
         <SectionItem key={section.index} section={section} />
       )}
     </div>
