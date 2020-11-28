@@ -4,7 +4,7 @@ import { Category } from '../../../../common/types/Category';
 
 import { CategoryItem } from "./index";
 
-type CategoryProps = {
+type CategoryListProps = {
   categories: Category[]
 }
 
@@ -13,7 +13,7 @@ type CategoryProps = {
  * @param {Category[]} categories
  * @constructor
  */
-const CategoryList: React.FC<CategoryProps> = ({ categories }: CategoryProps) => {
+const CategoryList: React.FC<CategoryListProps> = ({ categories }: CategoryListProps) => {
 
   return (
     <div>
