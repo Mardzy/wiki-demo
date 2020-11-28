@@ -33,6 +33,6 @@ In the command line add:
 $ yarn start | npm run start
 ```
 
-####Type the title of a page you would like data for in the text box and it shall appear on the page.
+### Type the title of a page you would like data for in the text box and it shall appear on the page.
 
 Node version 14.11.0 was used during the development of this app.
