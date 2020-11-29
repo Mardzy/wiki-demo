@@ -1,6 +1,5 @@
 import { Category } from "./Category";
 import { Section } from "./Section";
-import { WikiData } from "./WikiData";
-import { WikiDataResponse } from "./WikiDataResponse";
+import { FetchWikiData, WikiData, WikiDataResponse } from "./WikiData";
 
-export type { Category, Section, WikiData, WikiDataResponse };
+export type { Category, FetchWikiData, Section, WikiData, WikiDataResponse };

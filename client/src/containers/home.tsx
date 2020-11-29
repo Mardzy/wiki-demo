@@ -12,9 +12,8 @@ import { WikiData, WikiDataResponse } from "../types";
 const { Header, Content } = Layout;
 
 const Home: React.FC = () => {
-  const [value, setValue] = React.useState("");
-  const { data, loading }: WikiDataResponse = useFetchWikiData(value);
-  console.log("data: ", data);
+  const [title, setTitle] = React.useState("");
+  const { data, loading }: WikiDataResponse = useFetchWikiData(title);
 
   let timeout: number | null = null;
 
@@ -23,7 +22,7 @@ const Home: React.FC = () => {
       clearTimeout(timeout);
     }
 
-    timeout = window.setTimeout(() => setValue(value), 1500)
+    timeout = window.setTimeout(() => setTitle(value), 1500)
   }
 
   return (

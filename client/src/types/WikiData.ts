@@ -6,3 +6,12 @@ export type WikiData = {
   sections: Section[]
   title: string
 }
+
+export type FetchWikiData = {
+  fetchWikiData: WikiData | null
+}
+
+export type WikiDataResponse = {
+  data: FetchWikiData | undefined
+  loading: boolean | undefined
+}
