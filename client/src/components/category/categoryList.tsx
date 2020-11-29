@@ -22,9 +22,7 @@ const CategoryListItem = styled.div`
  * @constructor
  */
 const CategoryList: React.FC<CategoryListProps> = ({ categories }: CategoryListProps) => {
-  const nonHiddenCategories = categories?.filter(category => {
-    if(!category.hidden) return category
-  });
+  const nonHiddenCategories = categories?.filter(category => !category.hidden ? category : null);
 
   return !!nonHiddenCategories?.length ?
     <CategoriesContainer>

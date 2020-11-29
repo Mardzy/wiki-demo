@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 
 import { client } from "./apollo";
 
-import App from './App';
+import App from './containers/App';
 
 render(
   <ApolloProvider client={client}>

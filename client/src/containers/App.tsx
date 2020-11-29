@@ -1,9 +1,8 @@
 import * as React from 'react';
 
-import { Home } from './containers';
+import { Home } from './index';
 
 import 'antd/dist/antd.css';
-import './styles/main.scss'
 
 /**
  * Currently only one component
