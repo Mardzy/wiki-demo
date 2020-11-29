@@ -22,13 +22,15 @@ const CategoryListItem = styled.div`
  * @constructor
  */
 const CategoryList: React.FC<CategoryListProps> = ({ categories }: CategoryListProps) => {
-  const nonHiddenCategories = categories?.filter(category => !category.hidden);
+  const nonHiddenCategories = categories?.filter(category => {
+    if(!category.hidden) return category
+  });
 
   return !!nonHiddenCategories?.length ?
     <CategoriesContainer>
       <h3>Categories</h3>
-      {nonHiddenCategories && nonHiddenCategories.filter(({category, hidden}) =>
-        !hidden && <CategoryListItem key={category}>{_.startCase(category)}</CategoryListItem>
+      {nonHiddenCategories && nonHiddenCategories.map(({category, hidden}) =>
+        <CategoryListItem key={category}>{_.startCase(category)}</CategoryListItem>
       )}
     </CategoriesContainer> : null;
 }

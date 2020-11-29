@@ -27,12 +27,19 @@ const SectionList: React.FC<SectionListProps> = ({ sections }: SectionListProps)
   (
     <div>
       <h3>Table of Contents</h3>
-      {sections && sections.map(({anchor, index, number}) => {
-          const sumOfDotsInSectionNumber: number = (number.match(/\./g) || []).length;
-
-          return <SectionListItem dots={sumOfDotsInSectionNumber} key={index}><span>{number}. </span>{_.startCase(anchor)}</SectionListItem>
-        }
-      )}
+      {
+        sections && sections
+        .slice()
+        .sort((a:Section, b:Section) => Number(a.number) - Number(b.number))
+        .map(({anchor, index, number}: Section) =>
+          <SectionListItem
+            dots={(number.match(/\./g) || []).length}
+            key={index}
+          >
+            <span>{number}. </span>
+            {_.startCase(anchor)}
+          </SectionListItem>)
+      }
     </div>
   ): null;
 };
