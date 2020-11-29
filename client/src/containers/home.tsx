@@ -1,9 +1,8 @@
-import _ from 'lodash';
 import * as React from 'react';
 import { useDebounce } from 'use-debounce';
 import { Card, Input, Layout, Spin } from 'antd';
 
-import { useFetchWikiData } from "../hooks/wikiData/fetchWikiData";
+import { useFetchWikiData } from "../hooks";
 
 import { SectionList } from "../components/section";
 import { CategoryList } from "../components/category";

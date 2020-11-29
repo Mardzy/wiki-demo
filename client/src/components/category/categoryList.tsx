@@ -2,7 +2,7 @@ import _ from 'lodash';
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Category } from '../../types/Category';
+import { Category } from '../../types';
 
 type CategoryListProps = {
   categories: Category[] | undefined | null
