@@ -18,7 +18,6 @@
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
-    "eslint": "^7.14.0",
     "eslint-config-react-app": "^6.0.0",
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
@@ -56,6 +55,7 @@
     ]
   },
   "devDependencies": {
-    "@types/graphql": "^14.5.0"
+    "@types/graphql": "^14.5.0",
+    "eslint": "^7.14.0"
   }
 }

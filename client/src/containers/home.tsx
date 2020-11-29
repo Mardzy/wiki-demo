@@ -15,7 +15,7 @@ const Home: React.FC = () => {
   const [title, setTitle] = React.useState<string>("");
   const [delayedTitle]  = useDebounce<string>(title, 1500);
   const { data, loading }: WikiDataResponse = useFetchWikiData(delayedTitle);
-  
+
   return (
     <div>
       <Header>

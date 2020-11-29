@@ -2,8 +2,6 @@ import * as React from 'react';
 
 import { Category } from '../../types/Category';
 
-import { CategoryItem } from "./index";
-
 type CategoryListProps = {
   categories: Category[] | undefined
 }
@@ -19,11 +17,8 @@ const CategoryList: React.FC<CategoryListProps> = ({ categories }: CategoryListP
     <div>
       <h3>Categories</h3>
       {categories && categories.map(({ category, hidden, sortkey }) =>
-        <CategoryItem key={category} category={{ category, hidden, sortkey }} />
+        <div key={category}>{category}</div>
       )}
-        {/*!hidden*/}
-        {/*? <CategoryItem key={category} category={{ category, hidden, sortkey }} />*/}
-        {/*: null)}*/}
     </div>
   );
 };
