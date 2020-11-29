@@ -1,6 +1,7 @@
+import _ from 'lodash';
 import * as React from 'react';
 import { useDebounce } from 'use-debounce';
-import {Input, Layout, Spin} from 'antd';
+import { Card, Input, Layout, Spin } from 'antd';
 
 import { useFetchWikiData } from "../hooks/wikiData/fetchWikiData";
 
@@ -9,7 +10,7 @@ import { CategoryList } from "../components/category";
 
 import { WikiDataResponse } from "../types";
 
-const { Header, Content } = Layout;
+const { Header } = Layout;
 
 const Home: React.FC = () => {
   const [title, setTitle] = React.useState<string>("");
@@ -30,11 +31,10 @@ const Home: React.FC = () => {
       {loading && <Spin tip="Loading..." />}
       {
         data && data.fetchWikiData &&
-        <Content>
-          <h1>{data.fetchWikiData.title}</h1>
+        <Card title={<h2>{data.fetchWikiData.title}</h2>}>
           <SectionList sections={data.fetchWikiData.sections} />
           <CategoryList categories={data.fetchWikiData.categories} />
-        </Content>
+        </Card>
       }
     </div>
   );

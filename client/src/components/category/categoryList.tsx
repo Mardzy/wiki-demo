@@ -1,10 +1,20 @@
+import _ from 'lodash';
 import * as React from 'react';
+import styled from 'styled-components';
 
 import { Category } from '../../types/Category';
 
 type CategoryListProps = {
   categories: Category[] | undefined
 }
+
+const CategoriesContainer = styled.div`
+  margin-top: 15px;
+`
+
+const CategoryListItem = styled.div`
+  margin-left: 10px;
+`;
 
 /**
  *
@@ -14,12 +24,12 @@ type CategoryListProps = {
 const CategoryList: React.FC<CategoryListProps> = ({ categories }: CategoryListProps) => {
 
   return (
-    <div>
+    <CategoriesContainer>
       <h3>Categories</h3>
-      {categories && categories.map(({ category, hidden, sortkey }) =>
-        <div key={category}>{category}</div>
+      {categories && categories.map(({ category, hidden }) =>
+          !hidden && <CategoryListItem key={category}>{_.startCase(category)}</CategoryListItem>
       )}
-    </div>
+    </CategoriesContainer>
   );
 };
 
