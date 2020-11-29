@@ -1,34 +1,31 @@
 import * as React from 'react';
-import { Layout, Spin } from 'antd';
+import { useDebounce } from 'use-debounce';
+import {Input, Layout, Spin} from 'antd';
 
 import { useFetchWikiData } from "../hooks/wikiData/fetch-wiki-data";
 
 import { SectionList } from "../components/section";
 import { CategoryList } from "../components/category";
-import TextBox from "../components/inputs/text-box";
-import { WikiData, WikiDataResponse } from "../types";
 
+import { WikiDataResponse } from "../types";
 
 const { Header, Content } = Layout;
 
 const Home: React.FC = () => {
-  const [title, setTitle] = React.useState("");
-  const { data, loading }: WikiDataResponse = useFetchWikiData(title);
-
-  let timeout: number | null = null;
-
-  const handleChange = (value: string) => {
-    if (timeout) {
-      clearTimeout(timeout);
-    }
-
-    timeout = window.setTimeout(() => setTitle(value), 1500)
-  }
-
+  const [title, setTitle] = React.useState<string>("");
+  const [delayedTitle]  = useDebounce<string>(title, 1500);
+  const { data, loading }: WikiDataResponse = useFetchWikiData(delayedTitle);
+  
   return (
     <div>
       <Header>
-        <TextBox handleChange={handleChange}/>
+        <Input
+          onChange={
+            (e: React.ChangeEvent<HTMLInputElement>) =>
+              setTitle(e.target.value)
+          }
+          placeholder="Enter title to search"
+        />
       </Header>
       {loading && <Spin tip="Loading..." />}
       {
