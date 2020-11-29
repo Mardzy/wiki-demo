@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useDebounce } from 'use-debounce';
 import { Card, Input, Layout, Spin } from 'antd';
+import styled from 'styled-components';
 
 import { useFetchWikiData } from "../hooks";
 
@@ -10,6 +11,13 @@ import { CategoryList } from "../components/category";
 import { WikiDataResponse } from "../types";
 
 const { Header } = Layout;
+
+const StyledSpinnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+`;
 
 const Home: React.FC = () => {
   const [title, setTitle] = React.useState<string>("");
@@ -27,7 +35,7 @@ const Home: React.FC = () => {
           placeholder="Enter title to search"
         />
       </Header>
-      {loading && <Spin tip="Loading..." />}
+      {loading && <StyledSpinnerContainer><Spin size="large" tip="Loading..." /></StyledSpinnerContainer>}
       {
         data && data.fetchWikiData &&
         <Card title={<h2>{data.fetchWikiData.title}</h2>}>
