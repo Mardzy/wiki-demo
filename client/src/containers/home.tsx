@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useDebounce } from 'use-debounce';
 import {Input, Layout, Spin} from 'antd';
 
-import { useFetchWikiData } from "../hooks/wikiData/fetch-wiki-data";
+import { useFetchWikiData } from "../hooks/wikiData/fetchWikiData";
 
 import { SectionList } from "../components/section";
 import { CategoryList } from "../components/category";

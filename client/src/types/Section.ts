@@ -1,10 +1,10 @@
 export type Section = {
-  toclevel: string
+  toclevel: number
   level: string
   line: string
   number: string
   index: string
   fromtitle: string
-  byteoffset: string
+  byteoffset: number
   anchor: string
 }

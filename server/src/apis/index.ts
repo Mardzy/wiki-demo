@@ -1,4 +1,4 @@
-import WikipediaAPI from './wikipedia-API';
+import WikipediaAPI from './wikipedia';
 
 export const dataSources = () =>
   ({ wikipediaAPI: new WikipediaAPI() })
