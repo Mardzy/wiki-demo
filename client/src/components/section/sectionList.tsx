@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Section } from '../../../../common/types/Section';
+import { Section } from '../../types/Section';
 
 import { SectionItem } from "./index";
 

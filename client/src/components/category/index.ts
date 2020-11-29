@@ -1,4 +1,4 @@
 import CategoryItem from './category-item';
-import CategoryList from './category-list';
+import CategoryList from './categoryList';
 
 export { CategoryItem, CategoryList }

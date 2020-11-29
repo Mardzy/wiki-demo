@@ -1,4 +1,4 @@
 import SectionItem from './section-item';
-import SectionList from './section-list';
+import SectionList from './sectionList';
 
 export { SectionItem, SectionList }
