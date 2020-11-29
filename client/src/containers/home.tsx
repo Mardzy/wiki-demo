@@ -12,12 +12,25 @@ import { WikiDataResponse } from "../types";
 
 const { Header } = Layout;
 
+const StyledHeader = styled(Header)`
+  &.ant-layout-header {
+    padding: 0 8%;
+    .ant-input{
+      width: 20%;
+    }
+  }
+`;
+
 const StyledSpinnerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 60vh;
 `;
+
+const StyledCard = styled(Card)`
+  padding: 0 8%;
+`
 
 const Home: React.FC = () => {
   const [title, setTitle] = React.useState<string>("");
@@ -26,7 +39,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <Header>
+      <StyledHeader>
         <Input
           onChange={
             (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -34,14 +47,14 @@ const Home: React.FC = () => {
           }
           placeholder="Enter title to search"
         />
-      </Header>
+      </StyledHeader>
       {loading && <StyledSpinnerContainer><Spin size="large" tip="Loading..." /></StyledSpinnerContainer>}
       {
         data && data.fetchWikiData &&
-        <Card title={<h2>{data.fetchWikiData.title}</h2>}>
+        <StyledCard title={<h2>{data.fetchWikiData.title}</h2>}>
           <SectionList sections={data.fetchWikiData.sections} />
           <CategoryList categories={data.fetchWikiData.categories} />
-        </Card>
+        </StyledCard>
       }
     </div>
   );
