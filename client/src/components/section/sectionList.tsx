@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Section } from '../../types/Section';
 
 type SectionListProps = {
-  sections: Section[] | undefined
+  sections: Section[] | undefined | null
 }
 
 type SectionListItemProps = {
@@ -23,8 +23,8 @@ const SectionListItem = styled.div<SectionListItemProps>`
  * @constructor
  */
 const SectionList: React.FC<SectionListProps> = ({ sections }: SectionListProps) => {
-
-  return (
+  return !!sections?.length ?
+  (
     <div>
       <h3>Table of Contents</h3>
       {sections && sections.map(({anchor, index, number}) => {
@@ -34,7 +34,7 @@ const SectionList: React.FC<SectionListProps> = ({ sections }: SectionListProps)
         }
       )}
     </div>
-  );
+  ): null;
 };
 
 export default SectionList;

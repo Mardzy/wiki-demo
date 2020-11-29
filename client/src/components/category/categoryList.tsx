@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Category } from '../../types/Category';
 
 type CategoryListProps = {
-  categories: Category[] | undefined
+  categories: Category[] | undefined | null
 }
 
 const CategoriesContainer = styled.div`
@@ -22,15 +22,15 @@ const CategoryListItem = styled.div`
  * @constructor
  */
 const CategoryList: React.FC<CategoryListProps> = ({ categories }: CategoryListProps) => {
+  const nonHiddenCategories = categories?.filter(category => !category.hidden);
 
-  return (
+  return !!nonHiddenCategories?.length ?
     <CategoriesContainer>
       <h3>Categories</h3>
-      {categories && categories.map(({ category, hidden }) =>
-          !hidden && <CategoryListItem key={category}>{_.startCase(category)}</CategoryListItem>
+      {nonHiddenCategories && nonHiddenCategories.filter(({category, hidden}) =>
+        !hidden && <CategoryListItem key={category}>{_.startCase(category)}</CategoryListItem>
       )}
-    </CategoriesContainer>
-  );
-};
+    </CategoriesContainer> : null;
+}
 
 export default CategoryList;
